@@ -11,3 +11,6 @@ run following command
 
 `php bin/magento setup:upgrade`
 
+<b>Screenshot:</b>
+
+![image](https://user-images.githubusercontent.com/15847964/76002041-9f2b2b80-5ecb-11ea-8f36-73ba8b8e119f.png)

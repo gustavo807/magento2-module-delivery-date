@@ -1,0 +1,11 @@
+<input class="input-text" type="text" data-bind="
+    event: {change: userChanges},
+    hasFocus: focused,
+    value: value,
+    datepicker: true,
+    attr: {
+        name: getInputName(),
+        placeholder: placeholder,
+        'aria-describedby': noticeId,
+        disabled: disabled
+    }" data-validate="{required:true}" readonly="true"/>

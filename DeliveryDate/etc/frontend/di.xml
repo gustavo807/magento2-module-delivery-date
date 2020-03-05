@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Checkout\Model\CompositeConfigProvider">
+        <arguments>
+            <argument name="configProviders" xsi:type="array">
+                <item name="delivery_date_config_provider" xsi:type="object">SR\DeliveryDate\Model\DeliveryDateConfigProvider</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <!-- Add Delivery Date block to Multishipping -->
+    <type name="Magento\Multishipping\Block\Checkout\Shipping">
+        <plugin name="delivery_date_items_box" type="SR\DeliveryDate\Plugin\Multishipping\Block\ItemsBox" sortOrder="0"/>
+    </type>
+
+    <!-- Save Delivery Date data to quote -->
+    <type name="Magento\Multishipping\Model\Checkout\Type\Multishipping">
+        <plugin name="sr_delivery_date_save_data" type="SR\DeliveryDate\Model\Type\Plugin\Multishipping"/>
+    </type>
+
+</config>

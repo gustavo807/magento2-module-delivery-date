@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="sr_deliverydate" translate="label" type="text" sortOrder="1300" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Delivery Date</label>
+            <tab>sales</tab>
+            <resource>SR_DeliveryDate::deliverydate</resource>
+            <group id="cutoff_time" type="text"  sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Cutoff time</label>
+
+            </group>
+            <group id="holidays" type="text"  sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Holidays</label>
+                <field id="blackout_dates" translate="label" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Blackout Dates</label>
+                    <comment></comment>
+                    <frontend_model>SR\DeliveryDate\Block\Adminhtml\Form\Field\DatePickerList</frontend_model>
+                    <backend_model>SR\DeliveryDate\Model\Config\Backend\DatePickerList</backend_model>
+                </field>
+            </group>
+            <group id="general" type="text"  sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Extension Settings</label>
+                <field id="format" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Date Format:</label>
+                    <comment>yy-mm-dd</comment>
+                </field>
+                <field id="disabled" translate="label" type="multiselect" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Disabled Delivery Date</label>
+                    <source_model>SR\DeliveryDate\Model\Config\Source\Disabled</source_model>
+                </field>
+                <field id="required_delivery_date" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Required Delivery Date</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

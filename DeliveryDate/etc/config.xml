@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <sr_deliverydate>
+            <holidays>
+                <blackout_dates></blackout_dates>
+            </holidays>
+            <general>
+                <format>yy-mm-dd</format>
+                <disabled>0,1</disabled>
+                <required_delivery_date>1</required_delivery_date>
+            </general>
+        </sr_deliverydate>
+    </default>
+</config>

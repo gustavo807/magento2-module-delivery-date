@@ -1,0 +1,32 @@
+<div id="delivery-date-<?= (int) $block->getEntity()->getId() ?>" data-bind="scope: 'delivery-date-<?= (int) $block->getEntity()->getId() ?>'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+
+    <script>
+        var config = {
+            settings:   <?= $block->getConfigJson() ?>,
+            preValue:  "<?= $block->getDeliveryDate() ?>"
+        };
+
+        if(!window.delivery_date){
+            window.delivery_date = []
+        }
+
+        window.delivery_date['delivery-date-<?= (int) $block->getEntity()->getId() ?>'] = config;
+
+    </script>
+    <script type="text/x-magento-init">
+        {
+            "*": {
+                "Magento_Ui/js/core/app":{
+                    "components": {
+                        "delivery-date-<?= (int) $block->getEntity()->getId() ?>": {
+                            "component": "SR_DeliveryDate/js/view/multishipping-delivery-date",
+                            "template" : "SR_DeliveryDate/multishipping-delivery-date",
+                            "entityId" : <?= (int) $block->getEntity()->getId() ?>
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</div>

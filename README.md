@@ -3,8 +3,11 @@
 This is a fork of the this project [Module Delivery Date](https://github.com/sohelrana09/magento2-module-delivery-date "Module Delivery Date") with implementation for multi-address checkout
 
 
-##Installation
+<b>Setup Step:</b>
+
 copy SR folder inside app/code
+
 run following command 
+
 `php bin/magento setup:upgrade`
 
